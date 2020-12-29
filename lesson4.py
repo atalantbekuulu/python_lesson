@@ -1,19 +1,16 @@
 def zapros():
+    i = 0
     spisok=[]
-    marka = input("введите марку авто ")
-    model = input("введите модель авто ")
-    year = input("введите год авто ")
-    spisok.append('marka')
-    spisok.append(marka)
-    spisok.append('model')
-    spisok.append(model)
-    spisok.append('year')
-    spisok.append(year)
+    while i < 3:
+        marka = input("введите марку авто ")
+        model = input("введите модель авто ")
+        year = input("введите год авто ")
+        i+=1
+        slovar={
+            "marka":marka,
+            "model":model,
+            "year":year,
+        }
+        spisok.append(slovar)
     print(spisok)
-    slovar = {}
-    for index, item in enumerate(spisok):
-        if index % 2 == 0:
-            slovar[item] = spisok[index + 1]
-    print(slovar)
 zapros()
-
