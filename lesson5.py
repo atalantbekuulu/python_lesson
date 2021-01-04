@@ -19,10 +19,10 @@ def create():
     with open(filename, 'w') as f:
         spisok = json.dumps(slovar)
         f.write(spisok)
+    print("Файл с данными создан")    
 
 create()
 
-print("Файл с данными создан")
 
 def vyvod(file=file):
     directory = os.listdir(file)
