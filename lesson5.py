@@ -2,8 +2,16 @@ import json
 import os
 
 file = input('введите имя создаваемой папки папки в которую будете сохранять файлы ')
-os.mkdir(file)
-
+try:
+    os.mkdir(file)
+except FileExistsError:
+    iff=input("Такой файл уже существует хотите в нем сохранять свои файлы ?")
+    if iff=='да' or iff=='Да':
+        file=file
+    elif iff=='Нет' or iff=='нет':
+        file = input('введите имя создаваемой папки папки в которую будете сохранять файлы ')
+        os.mkdir(file)
+        
 def create():
     name = input('введите имя ')
     surename = input('введите фамилию ')
