@@ -9,7 +9,8 @@ except FileExistsError:
     if iff=='да' or iff=='Да':
         file=file
     elif iff=='Нет' or iff=='нет':
-        file = input('введите имя создаваемой папки папки в которую будете сохранять файлы ')
+        print('введите имя создаваемой папки папки в которую будете сохранять файлы название которой не"',file,'"')
+        file = input()
         os.mkdir(file)
         
 def create():
