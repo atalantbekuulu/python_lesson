@@ -19,25 +19,29 @@ def create():
     with open(filename, 'w') as f:
         spisok = json.dumps(slovar)
         f.write(spisok)
-    print("Файл с данными создан")    
-
+    print("Файл с данными создан\n")
 create()
 
 
 def vyvod(file=file):
+
     directory = os.listdir(file)
     for file in directory:
-        print('файлы с данными пользователей ', file)
-
+        print('файл с данными пользователя ', file,'\n')
 
 
 def vybor():
+
     seach_file = input('введите имя файла которое хотите открыть ')
     seach_file2 = file + '/' + seach_file + '.txt'
-    with open(seach_file2, 'r') as f:
-        file_content = f.read()
-        saved_dict = json.loads(file_content)
-        print('Данные файла', saved_dict)
+    try:
+        with open(seach_file2, 'r') as f:
+            file_content = f.read()
+            saved_dict = json.loads(file_content)
+            print('Данные файла', saved_dict)
+    except IOError:
+        print("Такого файла не существует\n")
+        povtor()
 
 
 def add_main():
@@ -46,6 +50,7 @@ def add_main():
     with open(add_data2, 'a') as f:
         add = input('введите информацию которую хотите добавить ')
         f.write(add)
+        print('Информация добавлена')
 
 
 def povtor():
